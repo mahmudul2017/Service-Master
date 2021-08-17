@@ -27,7 +27,7 @@ class SimpleService1 : Service() {
             showLog("i in ${i.toString()}")
             Thread.sleep(1000)
         }
-        return super.onStartCommand(intent, flags, startId)
+        return START_STICKY
     }
 
     fun showLog(message: String) {

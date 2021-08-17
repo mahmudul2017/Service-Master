@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.gorentalbd.service">
 
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ServiceMaster">
+
+        <activity android:name=".alarmService.AlarmActivity" />
+        <activity android:name=".foregroundS.ForeGroundActivity" />
+
+        <service
+            android:name=".intentService.IntentService"
+            android:stopWithTask="false" />
+
         <activity android:name=".timeDifference.TimeDifferenceActivity" />
         <activity android:name=".intentService.IntentSActivity" />
 
@@ -16,6 +26,10 @@
             android:name=".simpleService.SimpleService1"
             android:enabled="true"
             android:exported="true" />
+
+        <service android:name=".foregroundS.ForeGroundService" />
+
+        <receiver android:name=".alarmService.AlarmActivity$AlarmReceiver" />
 
         <activity android:name=".simpleService.ServiceActivity1" />
         <activity android:name=".ServiceActivity">
