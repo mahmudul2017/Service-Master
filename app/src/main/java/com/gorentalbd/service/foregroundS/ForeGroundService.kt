@@ -41,9 +41,10 @@ class ForeGroundService: Service() {
                  .setContentIntent(pendingIntent)
                  .build()
 
-            startForeground(1, notification)
+            //startForeground(1, notification)
+            startForegroundService(intent)
 
-            val notificationChannel: NotificationChannel = NotificationChannel(CHANNEL_ID, "My Alarm clock Service", NotificationManager.IMPORTANCE_DEFAULT)
+            val notificationChannel: NotificationChannel = NotificationChannel(CHANNEL_ID, "My Alarm clock Service", NotificationManager.IMPORTANCE_NONE)
             val notificationManager = getSystemService(NotificationManager::class.java)
             notificationManager!!.createNotificationChannel(notificationChannel)
 
