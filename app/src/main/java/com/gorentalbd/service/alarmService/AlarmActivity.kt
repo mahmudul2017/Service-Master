@@ -46,7 +46,7 @@ class AlarmActivity : AppCompatActivity() {
             60000, pendingIntent)*/
 
         alarmManager?.setInexactRepeating(
-            AlarmManager.ELAPSED_REALTIME_WAKEUP,
+            AlarmManager.RTC_WAKEUP,
             SystemClock.elapsedRealtime() + timeInMilies, // AlarmManager.INTERVAL_HALF_HOUR
             70000,
             pendingIntent

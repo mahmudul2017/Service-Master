@@ -8,7 +8,6 @@ import android.content.Intent
 import android.os.SystemClock
 import android.util.Log
 
-
 class IntentService : IntentService("IntentService") {
     override fun onHandleIntent(intent: Intent?) {
         for (i in 1..100) {
