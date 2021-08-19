@@ -6,8 +6,10 @@ import android.os.Bundle
 import com.gorentalbd.service.alarmService.AlarmActivity
 import com.gorentalbd.service.foregroundS.ForeGroundActivity
 import com.gorentalbd.service.intentService.IntentSActivity
+import com.gorentalbd.service.radioButton.RadioActivity
 import com.gorentalbd.service.simpleService.ServiceActivity1
 import com.gorentalbd.service.timeDifference.TimeDifferenceActivity
+import com.gorentalbd.service.timeformat.TimeFormatActivity
 import kotlinx.android.synthetic.main.activity_service.*
 
 class ServiceActivity : AppCompatActivity() {
@@ -33,6 +35,14 @@ class ServiceActivity : AppCompatActivity() {
 
         btnAlarmService.setOnClickListener {
             startActivity(Intent(this, AlarmActivity::class.java))
+        }
+
+        btnTimeFormat.setOnClickListener {
+            startActivity(Intent(this, TimeFormatActivity::class.java))
+        }
+
+        btnRadioButton.setOnClickListener {
+            startActivity(Intent(this, RadioActivity::class.java))
         }
     }
 }

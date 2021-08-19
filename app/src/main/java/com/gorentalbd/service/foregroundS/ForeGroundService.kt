@@ -6,6 +6,7 @@ import android.media.Ringtone
 import android.media.RingtoneManager
 import android.os.Build
 import android.os.IBinder
+import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import com.gorentalbd.service.R
@@ -48,6 +49,10 @@ class ForeGroundService: Service() {
             val notificationManager = getSystemService(NotificationManager::class.java)
             notificationManager!!.createNotificationChannel(notificationChannel)
 
+            for (i in 1..100) {
+                Log.d("Count", "i value is $i")
+                Thread.sleep(1000)
+            }
         }
         catch (e: Exception){
             e.printStackTrace()

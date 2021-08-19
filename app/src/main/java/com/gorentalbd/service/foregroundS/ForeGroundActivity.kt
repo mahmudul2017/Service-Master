@@ -29,8 +29,8 @@ class ForeGroundActivity : AppCompatActivity() {
     private fun ServiceCaller(intent: Intent) {
         stopService(intent)
 
-        val alarmHour: Int = 15 //timePicker!!.currentHour
-        val alarmMinute: Int = 45 //timePicker!!.currentMinute
+        val alarmHour: Int = timePicker!!.currentHour
+        val alarmMinute: Int = timePicker!!.currentMinute
         Log.d("time", "hour: $alarmHour - minute: $alarmMinute")
 
         intent.putExtra("alarmHour", alarmHour)
