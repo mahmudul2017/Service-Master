@@ -8,7 +8,7 @@ import com.gorentalbd.service.foregroundS.ForeGroundActivity
 import com.gorentalbd.service.intentService.IntentSActivity
 import com.gorentalbd.service.radioButton.RadioActivity
 import com.gorentalbd.service.simpleService.ServiceActivity1
-import com.gorentalbd.service.timeDifference.TimeDifferenceActivity
+import com.gorentalbd.service.timeDifference.TimeDiffActivity
 import com.gorentalbd.service.timeformat.TimeFormatActivity
 import kotlinx.android.synthetic.main.activity_service.*
 
@@ -22,7 +22,7 @@ class ServiceActivity : AppCompatActivity() {
         }
 
         btnTimeDifference.setOnClickListener {
-            startActivity(Intent(this, TimeDifferenceActivity::class.java))
+            startActivity(Intent(this, TimeDiffActivity::class.java))
         }
 
         btnIntentService.setOnClickListener {

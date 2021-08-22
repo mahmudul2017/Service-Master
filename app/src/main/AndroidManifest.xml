@@ -11,22 +11,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ServiceMaster">
-        <activity android:name=".radioButton.RadioActivity"></activity>
+        <activity android:name=".radioButton.RadioActivity" />
         <activity android:name=".timeformat.TimeFormatActivity" />
         <activity android:name=".alarmService.AlarmActivity" />
         <activity android:name=".foregroundS.ForeGroundActivity" />
 
         <service
-            android:name=".intentService.IntentService"
-            android:stopWithTask="false" />
+            android:name=".intentService.IntentService">
+            <!--android:stopWithTask="false" -->
+        </service>
 
-        <activity android:name=".timeDifference.TimeDifferenceActivity" />
+        <activity android:name=".timeDifference.TimeDiffActivity" />
         <activity android:name=".intentService.IntentSActivity" />
 
         <service
             android:name=".simpleService.SimpleService1"
             android:enabled="true"
             android:exported="true" />
+
         <service android:name=".foregroundS.ForeGroundService" />
 
         <receiver android:name=".alarmService.AlarmActivity$AlarmReceiver" />

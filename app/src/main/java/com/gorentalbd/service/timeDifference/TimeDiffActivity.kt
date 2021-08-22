@@ -8,7 +8,7 @@ import kotlinx.android.synthetic.main.activity_timedifference.*
 import java.text.SimpleDateFormat
 import java.util.*
 
-class TimeDifferenceActivity : AppCompatActivity() {
+class TimeDiffActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_timedifference)
