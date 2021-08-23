@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.gorentalbd.service.R
 import kotlinx.android.synthetic.main.activity_foreground.*
 
-
 class ForeGroundActivity : AppCompatActivity() {
     //private val timePicker: TimePicker? = null
 

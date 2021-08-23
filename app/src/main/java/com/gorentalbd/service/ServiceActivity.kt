@@ -7,6 +7,7 @@ import com.gorentalbd.service.alarmService.AlarmActivity
 import com.gorentalbd.service.foregroundS.ForeGroundActivity
 import com.gorentalbd.service.intentService.IntentSActivity
 import com.gorentalbd.service.radioButton.RadioActivity
+import com.gorentalbd.service.runPckg.RunActivity
 import com.gorentalbd.service.simpleService.ServiceActivity1
 import com.gorentalbd.service.timeDifference.TimeDiffActivity
 import com.gorentalbd.service.timeformat.TimeFormatActivity
@@ -43,6 +44,10 @@ class ServiceActivity : AppCompatActivity() {
 
         btnRadioButton.setOnClickListener {
             startActivity(Intent(this, RadioActivity::class.java))
+        }
+
+        btnRunButton.setOnClickListener {
+            startActivity(Intent(this, RunActivity::class.java))
         }
     }
 }

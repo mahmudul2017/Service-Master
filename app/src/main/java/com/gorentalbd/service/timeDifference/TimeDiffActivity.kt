@@ -29,9 +29,9 @@ class TimeDiffActivity : AppCompatActivity() {
         val c = Calendar.getInstance()
         val sdf = SimpleDateFormat("HH:mm")
         val getCurrentTime: String = sdf.format(c.time)
-        val getFajrTime = "16.01"
-        val getDuhurTime = "16.03"
-        val getAzorTime = "16.05"
+        val getFajrTime = "12.23"
+        val getDuhurTime = "12.24"
+        val getAzorTime = "12.25"
 
         if (getCurrentTime.compareTo(getFajrTime) < 0) { // = getCurrentTime < getFajrTime
             // Do your staff

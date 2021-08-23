@@ -25,30 +25,6 @@ class IntentSActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_intentservice)
 
-        timeChanged()
-
-        liveTime.observe(this, Observer {
-            val fajrTime = "18.53"
-            val dhurTime = "18.54"
-            val asorTime = "18.48"
-            val magribTime = "18.49"
-            val ishaTime = "18.55"
-
-            Log.d("activityValue", "timeChanged called")
-
-            if (it!! <= fajrTime) {  //ishaTime < value
-                tvIntentService.text = "Fajr Time : ${it}"
-            } else if (it!! <= dhurTime) {
-                tvIntentService.text = "Dhur Time : ${it}"
-            } else if (it!! <= asorTime) {
-                tvIntentService.text = "Asor Time : ${it}"
-            } else if (it!! <= magribTime) {
-                tvIntentService.text = "Magrib Time : ${it}"
-            } else {
-                tvIntentService.text = "Isha Time : ${it}"
-            }
-        })
-
         brcastReceiver = object : BroadcastReceiver() {
             override fun onReceive(context: Context?, intent: Intent?) {
                 //val value = intent?.getIntExtra("smallValue", 0)
@@ -57,28 +33,34 @@ class IntentSActivity : AppCompatActivity() {
                 if (!time.isNullOrEmpty()) {
                     tvIntentService.visibility = View.VISIBLE
 
-                    //liveTime.value = time
+                    val fajrTime = "12:32"
+                    val dhurTime = "12:34"
+                    val asorTime = "12:36"
+                    val magribTime = "12:38"
+                    val ishaTime = "12:40"
 
-                   /*val fajrTime = "18.39"
-                    val dhurTime = "18.40"
-                    val asorTime = "18.09"
-                    val magribTime = "18.11"
-                    val ishaTime = "18.13"
-
-                    if (time!! <= fajrTime) {  //ishaTime < value
+                    if (time.compareTo(fajrTime) <= 0) { //time < fajrTime
                         tvIntentService.text = "Fajr Time : ${time}"
-                    } else if (time!! <= dhurTime) {
+                        Log.d("activityValue", "Fajr called $time")
+                    } else if (time.compareTo(dhurTime) <= 0) {
                         tvIntentService.text = "Dhur Time : ${time}"
-                    } else if (time!! <= asorTime) {
+                        Log.d("activityValue", "Dhur called $time")
+                    } else if (time.compareTo(asorTime) <= 0) {
                         tvIntentService.text = "Asor Time : ${time}"
-                    } else if (time!! <= magribTime) {
+                        Log.d("activityValue", "Asor called $time")
+                    } else if (time.compareTo(magribTime) <= 0) {
                         tvIntentService.text = "Magrib Time : ${time}"
-                    } else {
+                        Log.d("activityValue", "Magrib called $time")
+                    } else if (time!!.compareTo(ishaTime) <= 0) {
                         tvIntentService.text = "Isha Time : ${time}"
-                    }*/
+                        Log.d("activityValue", "Isha called $time")
+                    } else {
+                        tvIntentService.text = "No Time : ${time}"
+                        Log.d("activityValue", "No Time called $time")
+                    }
+                    //tvIntentService.text = value.toString()
+                    Log.d("activityValue", "onReceive called")
                 }
-                //tvIntentService.text = value.toString()
-                //Log.d("activityValue", "onReceive called")
             }
         }
 
