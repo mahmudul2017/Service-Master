@@ -6,6 +6,7 @@ import android.os.Bundle
 import com.gorentalbd.service.alarmService.AlarmActivity
 import com.gorentalbd.service.foregroundS.ForeGroundActivity
 import com.gorentalbd.service.intentService.IntentSActivity
+import com.gorentalbd.service.notification.NotificationActivity
 import com.gorentalbd.service.radioButton.RadioActivity
 import com.gorentalbd.service.runPckg.RunActivity
 import com.gorentalbd.service.simpleService.ServiceActivity1
@@ -48,6 +49,10 @@ class ServiceActivity : AppCompatActivity() {
 
         btnRunButton.setOnClickListener {
             startActivity(Intent(this, RunActivity::class.java))
+        }
+
+        btnNotification.setOnClickListener {
+            startActivity(Intent(this, NotificationActivity::class.java))
         }
     }
 }

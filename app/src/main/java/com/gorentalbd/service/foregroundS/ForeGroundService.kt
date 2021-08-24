@@ -31,21 +31,21 @@ class ForeGroundService: Service() {
 
         ringtone = RingtoneManager.getRingtone(applicationContext, RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE))
 
-        try {
+        /*try {
             val notificationIntent: Intent = Intent(this, ForeGroundActivity::class.java)
             val pendingIntent: PendingIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0)
 
             val notification: Notification = NotificationCompat.Builder(this, CHANNEL_ID)
-                 //.setContentTitle("My Alarm clock")
-                 //.setContentText("Alarm time – " + alarmHour.toString() + " : " + alarmMinute.toString())
+                 .setContentTitle("My Alarm clock")
+                 .setContentText("Alarm time – " + alarmHour.toString() + " : " + alarmMinute.toString())
                  .setSmallIcon(R.drawable.ic_launcher_foreground)
                  .setContentIntent(pendingIntent)
                  .build()
 
-            //startForeground(1, notification)
-            startForegroundService(intent)
+            startForeground(1, notification)
+            //startForegroundService(intent)
 
-            val notificationChannel: NotificationChannel = NotificationChannel(CHANNEL_ID, "My Alarm clock Service", NotificationManager.IMPORTANCE_NONE)
+            val notificationChannel = NotificationChannel(CHANNEL_ID, "My Alarm clock Service", NotificationManager.IMPORTANCE_NONE)
             val notificationManager = getSystemService(NotificationManager::class.java)
             notificationManager!!.createNotificationChannel(notificationChannel)
 
@@ -56,9 +56,9 @@ class ForeGroundService: Service() {
         }
         catch (e: Exception){
             e.printStackTrace()
-        }
+        }*/
 
-        t.scheduleAtFixedRate(object : TimerTask() {
+        /*t.scheduleAtFixedRate(object : TimerTask() {
             override fun run() {
                 if (Calendar.getInstance().time.hours === alarmHour &&
                     Calendar.getInstance().time.minutes === alarmMinute
@@ -68,7 +68,7 @@ class ForeGroundService: Service() {
                     ringtone!!.stop()
                 }
             }
-        }, 0, 2000)
+        }, 0, 2000)*/
 
         return super.onStartCommand(intent, flags, startId)
     }

@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ServiceMaster">
-        <activity android:name=".runPckg.RunActivity"></activity>
+        <activity android:name=".notification.NotificationActivity"></activity>
+        <activity android:name=".runPckg.RunActivity" />
         <activity android:name=".radioButton.RadioActivity" />
         <activity android:name=".timeformat.TimeFormatActivity" />
         <activity android:name=".alarmService.AlarmActivity" />
@@ -24,6 +25,8 @@
 
         <activity android:name=".timeDifference.TimeDiffActivity" />
         <activity android:name=".intentService.IntentSActivity" />
+
+        <receiver android:name=".intentService.IntentSActivity$AlarmMngReceiver" />
 
         <service
             android:name=".simpleService.SimpleService1"
