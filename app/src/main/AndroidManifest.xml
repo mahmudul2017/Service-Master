@@ -3,6 +3,7 @@
     package="com.gorentalbd.service">
 
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:allowBackup="true"
@@ -11,15 +12,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ServiceMaster">
-        <activity android:name=".notification.NotificationActivity"></activity>
+        <activity android:name=".bootComplete.BootActivity"></activity>
+        <activity android:name=".serviceForeg.ServiceFrgActivity" />
+        <activity android:name=".notification.NotificationActivity" />
         <activity android:name=".runPckg.RunActivity" />
         <activity android:name=".radioButton.RadioActivity" />
         <activity android:name=".timeformat.TimeFormatActivity" />
         <activity android:name=".alarmService.AlarmActivity" />
         <activity android:name=".foregroundS.ForeGroundActivity" />
 
-        <service android:name=".intentService.IntentService">
+        <receiver
+            android:name=".foregroundS.ForeGroundActivity$MyBrndcastReceiver"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <!-- <action android:name="android.intent.action.QUICKBOOT_POWERON" -->
+            </intent-filter>
+        </receiver>
 
+        <service android:name=".intentService.IntentService">
             <!-- android:stopWithTask="false" -->
         </service>
 
@@ -33,6 +46,10 @@
             android:enabled="true"
             android:exported="true" />
         <service android:name=".foregroundS.ForeGroundService" />
+        <service
+            android:name=".serviceForeg.ServiceFrgnd"
+            android:enabled="true"
+            android:exported="false" />
 
         <receiver android:name=".alarmService.AlarmActivity$AlarmReceiver" />
 

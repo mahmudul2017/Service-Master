@@ -9,12 +9,13 @@ import com.gorentalbd.service.intentService.IntentSActivity
 import com.gorentalbd.service.notification.NotificationActivity
 import com.gorentalbd.service.radioButton.RadioActivity
 import com.gorentalbd.service.runPckg.RunActivity
+import com.gorentalbd.service.serviceForeg.ServiceFrgActivity
 import com.gorentalbd.service.simpleService.ServiceActivity1
 import com.gorentalbd.service.timeDifference.TimeDiffActivity
 import com.gorentalbd.service.timeformat.TimeFormatActivity
 import kotlinx.android.synthetic.main.activity_service.*
 
-class ServiceActivity : AppCompatActivity() {
+class   ServiceActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_service)
@@ -53,6 +54,10 @@ class ServiceActivity : AppCompatActivity() {
 
         btnNotification.setOnClickListener {
             startActivity(Intent(this, NotificationActivity::class.java))
+        }
+
+        btnServiceFrg.setOnClickListener {
+            startActivity(Intent(this, ServiceFrgActivity::class.java))
         }
     }
 }
