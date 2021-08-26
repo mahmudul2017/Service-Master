@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.gorentalbd.service.alarmService.AlarmActivity
+import com.gorentalbd.service.bootComplete.BootActivity
 import com.gorentalbd.service.foregroundS.ForeGroundActivity
 import com.gorentalbd.service.intentService.IntentSActivity
 import com.gorentalbd.service.notification.NotificationActivity
@@ -58,6 +59,10 @@ class   ServiceActivity : AppCompatActivity() {
 
         btnServiceFrg.setOnClickListener {
             startActivity(Intent(this, ServiceFrgActivity::class.java))
+        }
+
+        btnBootComplete.setOnClickListener {
+            startActivity(Intent(this, BootActivity::class.java))
         }
     }
 }

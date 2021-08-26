@@ -38,7 +38,7 @@ class ForeGroundActivity : AppCompatActivity() {
 
     // service
     private lateinit var brcastReceiver: BroadcastReceiver
-    private lateinit var broadcastReceiver: MyBrndcastReceiver
+    //private lateinit var broadcastReceiver: MyBrndcastReceiver
     private lateinit var intentFilter: IntentFilter
 
     // alarm
@@ -55,9 +55,9 @@ class ForeGroundActivity : AppCompatActivity() {
         context = this
         alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
 
-        broadcastReceiver = MyBrndcastReceiver()
+        //broadcastReceiver = MyBrndcastReceiver()
 
-        /* brcastReceiver = object : BroadcastReceiver() {
+         brcastReceiver = object : BroadcastReceiver() {
              override fun onReceive(context: Context?, intent: Intent?) {
                  val time = intent?.getStringExtra("smallValue")
 
@@ -102,11 +102,11 @@ class ForeGroundActivity : AppCompatActivity() {
                      Log.d(TAG, "onReceive called")
                  }
              }
-         }*/
+         }
 
         intentFilter = IntentFilter(ForeGroundService.FOREGROUND_ACTION)
-        registerReceiver(broadcastReceiver, intentFilter)
-        //registerReceiver(brcastReceiver, intentFilter)
+        //registerReceiver(broadcastReceiver, intentFilter)
+        registerReceiver(brcastReceiver, intentFilter)
 
         val intent = Intent(this, ForeGroundService::class.java)
         ContextCompat.startForegroundService(this, intent)
@@ -123,14 +123,14 @@ class ForeGroundActivity : AppCompatActivity() {
 
     override fun onResume() {
         intentFilter = IntentFilter(ForeGroundService.FOREGROUND_ACTION)
-        registerReceiver(broadcastReceiver, intentFilter)
-        //registerReceiver(brcastReceiver, intentFilter)
+        //registerReceiver(broadcastReceiver, intentFilter)
+        registerReceiver(brcastReceiver, intentFilter)
         super.onResume()
     }
 
     override fun onDestroy() {
-        unregisterReceiver(broadcastReceiver)
-        //unregisterReceiver(brcastReceiver)
+        //unregisterReceiver(broadcastReceiver)
+        unregisterReceiver(brcastReceiver)
         super.onDestroy()
     }
 
@@ -191,7 +191,7 @@ class ForeGroundActivity : AppCompatActivity() {
         startService(intent)
     }
 
-    class MyBrndcastReceiver : BroadcastReceiver() {
+    /*class MyBrndcastReceiver : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
             Toast.makeText(context, "Boot Outside", Toast.LENGTH_LONG).show()
 
@@ -208,5 +208,5 @@ class ForeGroundActivity : AppCompatActivity() {
                 }
             }
         }
-    }
+    }*/
 }
